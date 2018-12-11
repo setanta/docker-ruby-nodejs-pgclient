@@ -1,4 +1,4 @@
-FROM ruby:2.3.6-slim
+FROM ruby:2.5.3-slim
 
 RUN apt-get update -qq && apt-get install -y \
     apt-transport-https \
@@ -21,7 +21,7 @@ RUN apt-get update -qq && apt-get install -y \
 RUN gem update
 
 RUN sed -i 's/\(:DoNotReverseLookup *=> *\).*\(,\)/\1true\2/g' \
-           /usr/local/lib/ruby/2.3.0/webrick/config.rb
+           /usr/local/lib/ruby/2.5.0/webrick/config.rb
 
 RUN apt-get clean
 
